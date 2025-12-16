@@ -361,7 +361,7 @@ def validateInputParameters() {
         if (!params.sylph_taxonomy) {
             error("Contaminant screening is set to Sylph but no taxonomy was provided. Please provide a taxonomy with the --sylph_taxonomy option.")
         }
-    } 
+    }
 
     // Check which RSeQC modules we are running
     def valid_rseqc_modules = ['bam_stat', 'inner_distance', 'infer_experiment', 'junction_annotation', 'junction_saturation', 'read_distribution', 'read_duplication', 'tin']

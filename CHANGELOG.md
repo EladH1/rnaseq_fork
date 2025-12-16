@@ -15,16 +15,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Parameters
 
 | Old parameter | New parameter      |
-| ------------- | -------------------|
+| ------------- | ------------------ |
 |               | `--sylph_db`       |
 |               | `--sylph_taxonomy` |
 
 ### Software dependencies
 
-| Dependency | Old version | New version |
-| -----------| ----------- | ----------- |
-| `sylph`    |             | 0.7.0       |
-| `sylph-tax`|             | 1.2.0       |
+| Dependency  | Old version | New version |
+| ----------- | ----------- | ----------- |
+| `sylph`     |             | 0.7.0       |
+| `sylph-tax` |             | 1.2.0       |
 
 > **NB:** Dependency has been **updated** if both old and new version information is present.
 >

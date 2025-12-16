@@ -758,7 +758,7 @@ The plot on the left hand side shows the standard PC plot - notice the variable 
 <summary>Output files</summary>
 
 - `<ALIGNER>/contaminants/sylph`
-  - `*.tsv` Summary of containment ANI and abundances of detected species in the sample. See the [Sylph documentation](https://sylph-docs.github.io/Output-format/) for full details on the output format. 
+  - `*.tsv` Summary of containment ANI and abundances of detected species in the sample. See the [Sylph documentation](https://sylph-docs.github.io/Output-format/) for full details on the output format.
   - `*.sylphmpa` Taxonomic report of unaligned reads from `sylph-tax`. See the [Sylph documentation](https://sylph-docs.github.io/sylph-tax-output-format/) for full details on the output format.
 
 </details>
