@@ -1,6 +1,6 @@
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    IMPORT LOCAL MODULES/SUBWORKFLOWS
+    IMPORT MODULES/SUBWORKFLOWS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
@@ -49,6 +49,7 @@ include { MULTIQC                    } from '../../modules/nf-core/multiqc'
 include { BEDTOOLS_GENOMECOV as BEDTOOLS_GENOMECOV_FW          } from '../../modules/nf-core/bedtools/genomecov'
 include { BEDTOOLS_GENOMECOV as BEDTOOLS_GENOMECOV_REV         } from '../../modules/nf-core/bedtools/genomecov'
 include { SAMTOOLS_INDEX                                       } from '../../modules/nf-core/samtools/index'
+include { SAMTOOLS_SORT as SAMTOOLS_SORT_QUALIMAP              } from '../../modules/nf-core/samtools/sort'
 
 //
 // SUBWORKFLOW: Consisting entirely of nf-core/modules
@@ -254,15 +255,17 @@ workflow RNASEQ {
 
             ch_genome_bam        = BAM_DEDUP_UMI_STAR.out.bam
             ch_transcriptome_bam = BAM_DEDUP_UMI_STAR.out.transcriptome_bam
-            ch_genome_bam_index  = params.bam_csi_index ? BAM_DEDUP_UMI_STAR.out.csi : BAM_DEDUP_UMI_STAR.out.bai
+            ch_genome_bam_index  = BAM_DEDUP_UMI_STAR.out.bai
             ch_versions          = ch_versions.mix(BAM_DEDUP_UMI_STAR.out.versions)
 
             ch_multiqc_files = ch_multiqc_files
                 .mix(BAM_DEDUP_UMI_STAR.out.multiqc_files)
 
-        } else {
+        } else if (params.skip_markduplicates) {
             // The deduplicated stats should take priority for MultiQC, but use
-            // them straight out of the aligner otherwise
+            // them straight out of the aligner otherwise. If mark duplicates
+            // will run, those stats will be added later instead to avoid
+            // duplicate flagstat files in MultiQC.
 
             ch_multiqc_files = ch_multiqc_files
                 .mix(ALIGN_STAR.out.stats.collect{it[1]})
@@ -360,15 +363,17 @@ workflow RNASEQ {
             )
 
             ch_genome_bam        = BAM_DEDUP_UMI_HISAT2.out.bam
-            ch_genome_bam_index  = params.bam_csi_index ? BAM_DEDUP_UMI_HISAT2.out.csi : BAM_DEDUP_UMI_HISAT2.out.bai
+            ch_genome_bam_index  = BAM_DEDUP_UMI_HISAT2.out.bai
             ch_versions          = ch_versions.mix(BAM_DEDUP_UMI_HISAT2.out.versions)
 
             ch_multiqc_files = ch_multiqc_files
                 .mix(BAM_DEDUP_UMI_HISAT2.out.multiqc_files)
-        } else {
+        } else if (params.skip_markduplicates) {
 
             // The deduplicated stats should take priority for MultiQC, but use
-            // them straight out of the aligner otherwise
+            // them straight out of the aligner otherwise. If mark duplicates
+            // will run, those stats will be added later instead to avoid
+            // duplicate flagstat files in MultiQC.
             ch_multiqc_files = ch_multiqc_files
                 .mix(FASTQ_ALIGN_HISAT2.out.stats.collect{it[1]})
                 .mix(FASTQ_ALIGN_HISAT2.out.flagstat.collect{it[1]})
@@ -501,6 +506,7 @@ workflow RNASEQ {
 
     //
     // MODULE: Genome-wide coverage with BEDTools
+    // Note: Strand parameters are conditional on library strandedness (see nextflow.config)
     //
     if (!params.skip_bigwig) {
 
@@ -541,8 +547,15 @@ workflow RNASEQ {
     //
     if (!params.skip_qc) {
         if (!params.skip_qualimap) {
-            QUALIMAP_RNASEQ (
+            // Sort BAM by name for qualimap (performance optimization)
+            SAMTOOLS_SORT_QUALIMAP (
                 ch_genome_bam,
+                ch_fasta.map { [ [:], it ] }
+            )
+            ch_versions = ch_versions.mix(SAMTOOLS_SORT_QUALIMAP.out.versions.first())
+
+            QUALIMAP_RNASEQ (
+                SAMTOOLS_SORT_QUALIMAP.out.bam,
                 ch_gtf.map { [ [:], it ] }
             )
             ch_multiqc_files = ch_multiqc_files.mix(QUALIMAP_RNASEQ.out.results.collect{it[1]})
@@ -767,21 +780,28 @@ workflow RNASEQ {
             .mix(ch_methods_description)
 
         // Provide MultiQC with rename patterns to ensure it uses sample names
-        // for single-techrep samples not processed by CAT_FASTQ, and trims out
-        // _raw or _trimmed
-
+        // for single-techrep samples not processed by CAT_FASTQ.
+        //
+        // We only add mappings when the FASTQ simpleName differs from the sample ID.
+        // This prevents duplicate/conflicting mappings when multiple samples share
+        // the same FASTQ filename in different directories (see #1657).
+        //
+        // Note: _raw/_trimmed suffixes are handled via extra_fn_clean_exts in multiqc_config.yml
         ch_name_replacements = ch_fastq
             .map{ meta, reads ->
-                def name1 = file(reads[0][0]).simpleName + "\t" + meta.id + '_1'
-                def fastqcnames = meta.id + "_raw\t" + meta.id + "\n" + meta.id + "_trimmed\t" + meta.id
-                if (reads[0][1] ){
-                    def name2 = file(reads[0][1]).simpleName + "\t" + meta.id + '_2'
-                    def fastqcnames1 = meta.id + "_raw_1\t" + meta.id + "_1\n" + meta.id + "_trimmed_1\t" + meta.id + "_1"
-                    def fastqcnames2 = meta.id + "_raw_2\t" + meta.id + "_2\n" + meta.id + "_trimmed_2\t" + meta.id + "_2"
-                    return [ name1, name2, fastqcnames1, fastqcnames2 ]
-                } else{
-                    return [ name1, fastqcnames ]
+                def paired = reads[0][1] as boolean
+                def suffixes = paired ? ['_1', '_2'] : ['']
+                def mappings = []
+
+                def fastq1_simplename = file(reads[0][0]).simpleName
+                if (fastq1_simplename != meta.id) {
+                    mappings << [fastq1_simplename, "${meta.id}${suffixes[0]}"]
+                    if (paired) {
+                        mappings << [file(reads[0][1]).simpleName, "${meta.id}${suffixes[1]}"]
+                    }
                 }
+
+                return mappings.collect { it.join('\t') }
             }
             .flatten()
             .collectFile(name: 'name_replacement.txt', newLine: true)

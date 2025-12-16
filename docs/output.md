@@ -279,6 +279,8 @@ The STAR section of the MultiQC report shows a bar plot with alignment rates: go
   - `rsem.merged.gene_tpm.tsv`: Matrix of gene-level TPM values across all samples.
   - `rsem.merged.transcript_counts.tsv`: Matrix of isoform-level raw counts across all samples.
   - `rsem.merged.transcript_tpm.tsv`: Matrix of isoform-level TPM values across all samples.
+  - `rsem.merged.genes_long.tsv`: long format contains length, expected_count, TPM, and FPKM across all samples.
+  - `rsem.merged.isoforms_long.tsv`: long format contains length, expected_count, TPM, FPKM, and IsoPct across all samples.
   - `*.genes.results`: RSEM gene-level quantification results for each sample.
   - `*.isoforms.results`: RSEM isoform-level quantification results for each sample.
   - `*.STAR.genome.bam`: If `--save_align_intermeds` is specified the BAM file from STAR alignment containing read alignments to the reference genome will be placed in this directory. These files can be reused as `genome_bam` input in future pipeline runs.
@@ -614,6 +616,18 @@ RSeQC documentation: [tin.py](http://rseqc.sourceforge.net/#tin-py)
 - Provides an overall view of the data that helps to to the detect biases in the sequencing and/or mapping of the data and eases decision-making for further analysis.
 
 The [Qualimap RNA-seq QC module](http://qualimap.bioinfo.cipf.es/doc_html/analysis.html#rna-seq-qc) is used within this pipeline to assess the overall mapping and coverage relative to gene features.
+
+:::warning
+**Known limitation**: Qualimap has a known bug ([#1273](https://github.com/nf-core/rnaseq/issues/1273), [Qualimap issue #81](https://bitbucket.org/kokonech/qualimap/issues/81)) where it may report more reads assigned to genomic features (exons, introns, intergenic regions) than the total number of reads in the BAM file. This can lead to inflated read counts and incorrect genomic origin statistics.
+
+If accurate read distribution metrics are critical for your analysis, we recommend:
+
+- Cross-referencing Qualimap results with RSeQC output (particularly `read_distribution.txt`)
+- Using `--skip_qualimap` to disable Qualimap and rely on RSeQC for genomic feature distribution
+- Validating suspicious results with alternative tools or custom scripts
+
+This is an upstream tool issue that cannot be fixed at the pipeline level.
+:::
 
 ![MultiQC - Qualimap gene coverage plot](images/mqc_qualimap_coverage.png)
 
