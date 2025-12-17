@@ -24,6 +24,8 @@ report_section_order:
     order: 4002
   bbmap:
     order: 4001
+  bowtie2_rrna:
+    order: 4000
   # Alignment
   star:
     order: 3000
@@ -102,6 +104,7 @@ run_modules:
   - fastp
   - bbmap
   - sortmerna
+  - bowtie2
   - star
   - hisat2
   - rsem
@@ -133,6 +136,10 @@ module_order:
       info: "This section of the report shows FastQC results after adapter trimming."
       path_filters:
         - "*_trimmed*fastqc.zip"
+  - bowtie2:
+      anchor: "bowtie2_rrna"
+      name: "Bowtie2 (rRNA removal)"
+      info: "This section shows Bowtie2 alignment statistics for rRNA removal. Reads were aligned against an rRNA reference to filter out ribosomal RNA contamination."
 
 # Don't show % Dups in the General Stats table (we have this from Picard)
 table_columns_visible:
@@ -170,6 +177,9 @@ sp:
 
   sortmerna:
     fn: "*.sortmerna.log"
+
+  bowtie2:
+    fn: "*.bowtie2.log"
 
   hisat2:
     fn: "*.hisat2.summary.log"
