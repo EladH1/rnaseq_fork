@@ -197,18 +197,18 @@
                 "fastqc/trim/WT_REP2_trimmed_2_val_2_fastqc.html",
                 "fastqc/trim/WT_REP2_trimmed_2_val_2_fastqc.zip",
                 "fq_lint",
+                "fq_lint/bbsplit",
+                "fq_lint/bbsplit/RAP1_IAA_30M_REP1.fq_lint.txt",
+                "fq_lint/bbsplit/RAP1_UNINDUCED_REP1.fq_lint.txt",
+                "fq_lint/bbsplit/RAP1_UNINDUCED_REP2.fq_lint.txt",
+                "fq_lint/bbsplit/WT_REP1.fq_lint.txt",
+                "fq_lint/bbsplit/WT_REP2.fq_lint.txt",
                 "fq_lint/raw",
                 "fq_lint/raw/RAP1_IAA_30M_REP1.fq_lint.txt",
                 "fq_lint/raw/RAP1_UNINDUCED_REP1.fq_lint.txt",
                 "fq_lint/raw/RAP1_UNINDUCED_REP2.fq_lint.txt",
                 "fq_lint/raw/WT_REP1.fq_lint.txt",
                 "fq_lint/raw/WT_REP2.fq_lint.txt",
-                "fq_lint/sortmerna",
-                "fq_lint/sortmerna/RAP1_IAA_30M_REP1.fq_lint.txt",
-                "fq_lint/sortmerna/RAP1_UNINDUCED_REP1.fq_lint.txt",
-                "fq_lint/sortmerna/RAP1_UNINDUCED_REP2.fq_lint.txt",
-                "fq_lint/sortmerna/WT_REP1.fq_lint.txt",
-                "fq_lint/sortmerna/WT_REP2.fq_lint.txt",
                 "fq_lint/trimmed",
                 "fq_lint/trimmed/RAP1_IAA_30M_REP1.fq_lint.txt",
                 "fq_lint/trimmed/RAP1_UNINDUCED_REP1.fq_lint.txt",
@@ -641,9 +641,9 @@
             [
                 "genome_gfp.fasta:md5,e23e302af63736a199985a169fdac055",
                 "genome_gfp.gtf:md5,b4776accd1bf7206c7ab0f1d84e4721e",
-                "bbmap-bbsplit_plot.txt:md5,057444e2d837e3f3c7d11bedc0d1992b",
-                "bbmap.txt:md5,22885ff09019f43509120df81d37451d",
-                "bbsplit_stats_table.txt:md5,47514fc5cfc7cd66b439ea61081535db",
+                "bbmap-bbsplit_plot.txt:md5,dcecf05caefb701c20ed9ca453df1232",
+                "bbmap.txt:md5,7ff6f891aeef97f3cb608cafcab30031",
+                "bbsplit_stats_table.txt:md5,f8140b0def20e8f2f1ff679f1f7c32b9",
                 "cutadapt_filtered_reads_plot.txt:md5,6fa381627f7c1f664f3d4b2cb79cce90",
                 "cutadapt_trimmed_sequences_plot_3_Counts.txt:md5,13dfa866fd91dbb072689efe9aa83b1f",
                 "cutadapt_trimmed_sequences_plot_3_Obs_Exp.txt:md5,07145dd8dd3db654859b18eb0389046c",
@@ -735,6 +735,6 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.2"
         },
-        "timestamp": "2025-12-17T19:04:39.172322246"
+        "timestamp": "2025-12-17T21:01:56.175353378"
     }
 }

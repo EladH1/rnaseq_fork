@@ -199,18 +199,18 @@
                 "fastqc/trim/WT_REP2_trimmed_2_val_2_fastqc.html",
                 "fastqc/trim/WT_REP2_trimmed_2_val_2_fastqc.zip",
                 "fq_lint",
+                "fq_lint/bbsplit",
+                "fq_lint/bbsplit/RAP1_IAA_30M_REP1.fq_lint.txt",
+                "fq_lint/bbsplit/RAP1_UNINDUCED_REP1.fq_lint.txt",
+                "fq_lint/bbsplit/RAP1_UNINDUCED_REP2.fq_lint.txt",
+                "fq_lint/bbsplit/WT_REP1.fq_lint.txt",
+                "fq_lint/bbsplit/WT_REP2.fq_lint.txt",
                 "fq_lint/raw",
                 "fq_lint/raw/RAP1_IAA_30M_REP1.fq_lint.txt",
                 "fq_lint/raw/RAP1_UNINDUCED_REP1.fq_lint.txt",
                 "fq_lint/raw/RAP1_UNINDUCED_REP2.fq_lint.txt",
                 "fq_lint/raw/WT_REP1.fq_lint.txt",
                 "fq_lint/raw/WT_REP2.fq_lint.txt",
-                "fq_lint/sortmerna",
-                "fq_lint/sortmerna/RAP1_IAA_30M_REP1.fq_lint.txt",
-                "fq_lint/sortmerna/RAP1_UNINDUCED_REP1.fq_lint.txt",
-                "fq_lint/sortmerna/RAP1_UNINDUCED_REP2.fq_lint.txt",
-                "fq_lint/sortmerna/WT_REP1.fq_lint.txt",
-                "fq_lint/sortmerna/WT_REP2.fq_lint.txt",
                 "fq_lint/trimmed",
                 "fq_lint/trimmed/RAP1_IAA_30M_REP1.fq_lint.txt",
                 "fq_lint/trimmed/RAP1_UNINDUCED_REP1.fq_lint.txt",
@@ -1350,7 +1350,7 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.2"
         },
-        "timestamp": "2025-12-17T19:38:56.812872714"
+        "timestamp": "2025-12-17T21:42:13.728356187"
     },
     "Params: --aligner star_rsem - stub": {
         "content": [
