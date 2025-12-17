@@ -198,6 +198,19 @@ You can save the index by using the [`--save_reference`](https://nf-co.re/rnaseq
 
 When `--remove_ribo_rna` is specified, the pipeline removes ribosomal RNA reads using one of three tools, selected via the `--ribo_removal_tool` parameter.
 
+#### SILVA Database Licensing Considerations
+
+> [!IMPORTANT]
+> **For SortMeRNA and Bowtie2 users**: The default rRNA databases include sequences from the SILVA database. Commercial and non-academic entities require [licensing for SILVA](https://www.arb-silva.de/silva-license-information) to use these databases.
+>
+> **Licensing-compliant alternatives**:
+>
+> - **SILVA 138+**: Available under CC-BY 4.0 license (permissive for most uses)
+> - **Bowtie2**: Can be used with custom, license-free rRNA databases via `--ribo_database_manifest`
+> - **RiboDetector**: Machine learning-based; does not require reference databases (but see warning below)
+>
+> Users in commercial or clinical settings should verify database licensing requirements before processing data.
+
 #### SortMeRNA (default)
 
 <details markdown="1">
@@ -209,7 +222,7 @@ When `--remove_ribo_rna` is specified, the pipeline removes ribosomal RNA reads 
 
 </details>
 
-When `--ribo_removal_tool sortmerna` is specified (or by default), the pipeline uses [SortMeRNA](https://github.com/biocore/sortmerna) for the removal of ribosomal RNA. By default, [rRNA databases](https://github.com/biocore/sortmerna/tree/master/data/rRNA_databases) defined in the SortMeRNA GitHub repo are used. You can see an example in the pipeline GitHub repository in `assets/rrna-db-defaults.txt` which is used by default via the `--ribo_database_manifest` parameter. Please note that commercial/non-academic entities require [licensing for SILVA](https://www.arb-silva.de/silva-license-information) for these default databases.
+When `--ribo_removal_tool sortmerna` is specified (or by default), the pipeline uses [SortMeRNA](https://github.com/biocore/sortmerna) for the removal of ribosomal RNA. By default, [rRNA databases](https://github.com/biocore/sortmerna/tree/master/data/rRNA_databases) defined in the SortMeRNA GitHub repo are used. You can see an example in the pipeline GitHub repository in `assets/rrna-db-defaults.txt` which is used by default via the `--ribo_database_manifest` parameter.
 
 ![MultiQC - SortMeRNA hit count plot](images/mqc_sortmerna.png)
 
@@ -225,6 +238,8 @@ When `--ribo_removal_tool sortmerna` is specified (or by default), the pipeline 
 </details>
 
 When `--ribo_removal_tool bowtie2` is specified, the pipeline uses [Bowtie2](https://github.com/BenLangmead/bowtie2) for alignment-based rRNA removal. Reads are aligned against rRNA reference sequences specified via `--ribo_database_manifest`, and reads that align to rRNA are filtered out. The unaligned reads (non-rRNA) are kept for downstream analysis.
+
+**Note**: Bowtie2 is recommended for users with SILVA licensing concerns, as it can be used with custom rRNA databases that do not include SILVA sequences.
 
 #### RiboDetector
 
