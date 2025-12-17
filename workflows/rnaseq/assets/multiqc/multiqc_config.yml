@@ -106,6 +106,7 @@ run_modules:
   - hisat2
   - rsem
   - umitools
+  - umicollapse
   - salmon
   - kallisto
   - samtools
@@ -187,6 +188,15 @@ sp:
   kraken:
     - fn: "*.kraken2.report.txt"
     - fn: "*.kraken2.report_bracken.txt"
+
+  umitools/extract:
+    fn: "*.umi_extract.log"
+  umitools/dedup:
+    fn: "*.umi_dedup*.log"
+
+  umicollapse:
+    fn: "*_UMICollapse.log"
+
   rseqc/bam_stat:
     fn: "*.bam_stat.txt"
   rseqc/gene_body_coverage:
