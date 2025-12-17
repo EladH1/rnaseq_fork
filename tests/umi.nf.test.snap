@@ -3,6 +3,9 @@
         "content": [
             231,
             {
+                "CAT_FASTQ": {
+                    "cat": 9.5
+                },
                 "CUSTOM_CATADDITIONALFASTA": {
                     "python": "3.12.2"
                 },
@@ -1425,12 +1428,15 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.2"
         },
-        "timestamp": "2025-12-17T19:45:06.94039044"
+        "timestamp": "2025-12-17T23:20:11.126163902"
     },
     "Params: --aligner hisat2 --umi_dedup_tool 'umicollapse'": {
         "content": [
             164,
             {
+                "CAT_FASTQ": {
+                    "cat": 9.5
+                },
                 "CUSTOM_CATADDITIONALFASTA": {
                     "python": "3.12.2"
                 },
@@ -2597,7 +2603,7 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.2"
         },
-        "timestamp": "2025-12-17T19:41:27.26607939"
+        "timestamp": "2025-12-17T23:16:33.601347995"
     },
     "--umi_dedup_tool 'umitools - stub": {
         "content": [
@@ -2605,6 +2611,9 @@
             {
                 "BBMAP_BBSPLIT": {
                     "bbmap": 39.18
+                },
+                "CAT_FASTQ": {
+                    "cat": 9.5
                 },
                 "CUSTOM_CATADDITIONALFASTA": {
                     "python": null
@@ -2705,6 +2714,6 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.2"
         },
-        "timestamp": "2025-12-17T19:45:45.590875591"
+        "timestamp": "2025-12-17T23:20:49.482119111"
     }
 }

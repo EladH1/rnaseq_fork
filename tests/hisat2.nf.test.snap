@@ -6,6 +6,9 @@
                 "BBMAP_BBSPLIT": {
                     "bbmap": 39.18
                 },
+                "CAT_FASTQ": {
+                    "cat": 9.5
+                },
                 "CUSTOM_CATADDITIONALFASTA": {
                     "python": null
                 },
@@ -97,7 +100,7 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.2"
         },
-        "timestamp": "2025-12-17T17:48:19.637488518"
+        "timestamp": "2025-12-17T22:37:25.674572129"
     },
     "Params: --aligner hisat2": {
         "content": [
@@ -105,6 +108,9 @@
             {
                 "BBMAP_BBSPLIT": {
                     "bbmap": 39.18
+                },
+                "CAT_FASTQ": {
+                    "cat": 9.5
                 },
                 "CUSTOM_CATADDITIONALFASTA": {
                     "python": "3.12.2"
@@ -1244,9 +1250,6 @@
                 "e_data.ctab:md5,22bdc84c1c4acce9798868e8c7b56004",
                 "i2t.ctab:md5,dda3d3ccd7d4184d947c654ae73efb7b",
                 "i_data.ctab:md5,80fe14762a8f7230d516bba37b7275d1",
-                "bbmap-bbsplit_plot.txt:md5,dcecf05caefb701c20ed9ca453df1232",
-                "bbmap.txt:md5,7ff6f891aeef97f3cb608cafcab30031",
-                "bbsplit_stats_table.txt:md5,f8140b0def20e8f2f1ff679f1f7c32b9",
                 "cutadapt_filtered_reads_plot.txt:md5,6fa381627f7c1f664f3d4b2cb79cce90",
                 "cutadapt_trimmed_sequences_plot_3_Counts.txt:md5,13dfa866fd91dbb072689efe9aa83b1f",
                 "cutadapt_trimmed_sequences_plot_3_Obs_Exp.txt:md5,07145dd8dd3db654859b18eb0389046c",
@@ -1323,6 +1326,6 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.2"
         },
-        "timestamp": "2025-12-17T21:04:48.732216087"
+        "timestamp": "2025-12-17T22:36:51.561751864"
     }
 }

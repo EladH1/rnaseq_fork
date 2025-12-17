@@ -6,6 +6,9 @@
                 "BBMAP_BBSPLIT": {
                     "bbmap": 39.18
                 },
+                "CAT_FASTQ": {
+                    "cat": 9.5
+                },
                 "CUSTOM_CATADDITIONALFASTA": {
                     "python": null
                 },
@@ -82,7 +85,7 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.2"
         },
-        "timestamp": "2025-12-17T19:27:25.424388702"
+        "timestamp": "2025-12-17T23:02:31.731067261"
     },
     "Params: default --use_sentieon_star": {
         "content": [
@@ -90,6 +93,9 @@
             {
                 "BBMAP_BBSPLIT": {
                     "bbmap": 39.18
+                },
+                "CAT_FASTQ": {
+                    "cat": 9.5
                 },
                 "CUSTOM_CATADDITIONALFASTA": {
                     "python": "3.12.2"
@@ -214,6 +220,6 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.2"
         },
-        "timestamp": "2025-12-17T21:30:08.352071128"
+        "timestamp": "2025-12-17T23:02:00.146519298"
     }
 }
