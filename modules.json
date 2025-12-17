@@ -270,7 +270,7 @@
                     "sortmerna": {
                         "branch": "master",
                         "git_sha": "d4a425ce59fc803a11e520f16680ede9af09761f",
-                        "installed_by": ["fastq_qc_trim_filter_setstrandedness", "modules"]
+                        "installed_by": ["fastq_qc_trim_filter_setstrandedness", "fastq_remove_rrna", "modules"]
                     },
                     "star/align": {
                         "branch": "master",
