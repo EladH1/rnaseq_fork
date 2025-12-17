@@ -147,6 +147,7 @@ extra_fn_clean_exts:
   - ".markdup"
   - "_primary"
   - ".namesorted"
+  - ".umi_extract"
   - type: remove
     pattern: "_raw"
   - type: remove
