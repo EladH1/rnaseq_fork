@@ -163,7 +163,7 @@ sp:
   fastp:
     fn: "*.fastp.json"
 
-  bbmap:
+  bbmap/bbsplit:
     fn: "*.stats.txt"
 
   sortmerna:
