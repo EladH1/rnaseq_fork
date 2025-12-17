@@ -6,9 +6,6 @@
                 "BBMAP_BBSPLIT": {
                     "bbmap": 39.18
                 },
-                "CAT_FASTQ": {
-                    "cat": 9.5
-                },
                 "CUSTOM_CATADDITIONALFASTA": {
                     "python": null
                 },
@@ -85,7 +82,7 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.2"
         },
-        "timestamp": "2025-12-04T15:39:08.789608161"
+        "timestamp": "2025-12-17T17:45:25.457615093"
     },
     "Params: --featurecounts_group_type false": {
         "content": [
@@ -93,9 +90,6 @@
             {
                 "BBMAP_BBSPLIT": {
                     "bbmap": 39.18
-                },
-                "CAT_FASTQ": {
-                    "cat": 9.5
                 },
                 "CUSTOM_CATADDITIONALFASTA": {
                     "python": "3.12.2"
@@ -225,6 +219,9 @@
                 "multiqc/star_salmon",
                 "multiqc/star_salmon/multiqc_report.html",
                 "multiqc/star_salmon/multiqc_report_data",
+                "multiqc/star_salmon/multiqc_report_data/bbmap-bbsplit_plot.txt",
+                "multiqc/star_salmon/multiqc_report_data/bbmap.txt",
+                "multiqc/star_salmon/multiqc_report_data/bbsplit_stats_table.txt",
                 "multiqc/star_salmon/multiqc_report_data/cutadapt_filtered_reads_plot.txt",
                 "multiqc/star_salmon/multiqc_report_data/cutadapt_trimmed_sequences_plot_3_Counts.txt",
                 "multiqc/star_salmon/multiqc_report_data/cutadapt_trimmed_sequences_plot_3_Obs_Exp.txt",
@@ -272,6 +269,9 @@
                 "multiqc/star_salmon/multiqc_report_data/star_summary_table.txt",
                 "multiqc/star_salmon/multiqc_report_plots",
                 "multiqc/star_salmon/multiqc_report_plots/pdf",
+                "multiqc/star_salmon/multiqc_report_plots/pdf/bbmap-bbsplit_plot-cnt.pdf",
+                "multiqc/star_salmon/multiqc_report_plots/pdf/bbmap-bbsplit_plot-pct.pdf",
+                "multiqc/star_salmon/multiqc_report_plots/pdf/bbsplit_stats_table.pdf",
                 "multiqc/star_salmon/multiqc_report_plots/pdf/cutadapt_filtered_reads_plot-cnt.pdf",
                 "multiqc/star_salmon/multiqc_report_plots/pdf/cutadapt_filtered_reads_plot-pct.pdf",
                 "multiqc/star_salmon/multiqc_report_plots/pdf/cutadapt_trimmed_sequences_plot_3_Counts.pdf",
@@ -306,6 +306,9 @@
                 "multiqc/star_salmon/multiqc_report_plots/pdf/star_alignment_plot-pct.pdf",
                 "multiqc/star_salmon/multiqc_report_plots/pdf/star_summary_table.pdf",
                 "multiqc/star_salmon/multiqc_report_plots/png",
+                "multiqc/star_salmon/multiqc_report_plots/png/bbmap-bbsplit_plot-cnt.png",
+                "multiqc/star_salmon/multiqc_report_plots/png/bbmap-bbsplit_plot-pct.png",
+                "multiqc/star_salmon/multiqc_report_plots/png/bbsplit_stats_table.png",
                 "multiqc/star_salmon/multiqc_report_plots/png/cutadapt_filtered_reads_plot-cnt.png",
                 "multiqc/star_salmon/multiqc_report_plots/png/cutadapt_filtered_reads_plot-pct.png",
                 "multiqc/star_salmon/multiqc_report_plots/png/cutadapt_trimmed_sequences_plot_3_Counts.png",
@@ -340,6 +343,9 @@
                 "multiqc/star_salmon/multiqc_report_plots/png/star_alignment_plot-pct.png",
                 "multiqc/star_salmon/multiqc_report_plots/png/star_summary_table.png",
                 "multiqc/star_salmon/multiqc_report_plots/svg",
+                "multiqc/star_salmon/multiqc_report_plots/svg/bbmap-bbsplit_plot-cnt.svg",
+                "multiqc/star_salmon/multiqc_report_plots/svg/bbmap-bbsplit_plot-pct.svg",
+                "multiqc/star_salmon/multiqc_report_plots/svg/bbsplit_stats_table.svg",
                 "multiqc/star_salmon/multiqc_report_plots/svg/cutadapt_filtered_reads_plot-cnt.svg",
                 "multiqc/star_salmon/multiqc_report_plots/svg/cutadapt_filtered_reads_plot-pct.svg",
                 "multiqc/star_salmon/multiqc_report_plots/svg/cutadapt_trimmed_sequences_plot_3_Counts.svg",
@@ -635,6 +641,9 @@
             [
                 "genome_gfp.fasta:md5,e23e302af63736a199985a169fdac055",
                 "genome_gfp.gtf:md5,b4776accd1bf7206c7ab0f1d84e4721e",
+                "bbmap-bbsplit_plot.txt:md5,057444e2d837e3f3c7d11bedc0d1992b",
+                "bbmap.txt:md5,22885ff09019f43509120df81d37451d",
+                "bbsplit_stats_table.txt:md5,47514fc5cfc7cd66b439ea61081535db",
                 "cutadapt_filtered_reads_plot.txt:md5,6fa381627f7c1f664f3d4b2cb79cce90",
                 "cutadapt_trimmed_sequences_plot_3_Counts.txt:md5,13dfa866fd91dbb072689efe9aa83b1f",
                 "cutadapt_trimmed_sequences_plot_3_Obs_Exp.txt:md5,07145dd8dd3db654859b18eb0389046c",
@@ -726,6 +735,6 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.2"
         },
-        "timestamp": "2025-12-04T15:38:38.907598452"
+        "timestamp": "2025-12-17T19:04:39.172322246"
     }
 }
