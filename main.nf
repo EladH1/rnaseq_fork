@@ -101,7 +101,11 @@ workflow NFCORE_RNASEQ {
     // WORKFLOW: Run nf-core/rnaseq workflow
     //
     ch_samplesheet = Channel.value(file(params.input, checkIfExists: true))
+
+    // Bowtie2 rRNA index is built on-demand inside the fastq_remove_rrna subworkflow
+    // rather than in PREPARE_GENOME, to avoid duplicating the rRNA FASTA preparation logic
     ch_bowtie2_index = Channel.empty()
+
     RNASEQ (
         ch_samplesheet,
         ch_versions,
