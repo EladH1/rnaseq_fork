@@ -82,7 +82,7 @@ workflow NFCORE_RNASEQ {
         params.pseudo_aligner,
         params.skip_gtf_filter,
         params.skip_bbsplit,
-        !params.remove_ribo_rna,
+        !(params.remove_ribo_rna && params.ribo_removal_tool == 'sortmerna'),
         params.skip_alignment,
         params.skip_pseudo_alignment,
         params.use_sentieon_star
