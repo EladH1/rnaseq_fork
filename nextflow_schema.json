@@ -292,8 +292,16 @@
                 "remove_ribo_rna": {
                     "type": "boolean",
                     "fa_icon": "fas fa-trash-alt",
-                    "description": "Enable the removal of reads derived from ribosomal RNA using SortMeRNA.",
-                    "help_text": "Any patterns found in sequences defined by the `--ribo_database_manifest` parameter will be used for filtering."
+                    "description": "Enable the removal of reads derived from ribosomal RNA.",
+                    "help_text": "Any patterns found in sequences defined by the `--ribo_database_manifest` parameter will be used for filtering (when using SortMeRNA or Bowtie2)."
+                },
+                "ribo_removal_tool": {
+                    "type": "string",
+                    "default": "sortmerna",
+                    "fa_icon": "fas fa-tools",
+                    "description": "Tool to use for rRNA removal.",
+                    "help_text": "Choose between 'sortmerna', 'ribodetector', or 'bowtie2' for rRNA removal. SortMeRNA and Bowtie2 require reference databases specified via `--ribo_database_manifest`. RiboDetector uses a deep learning model and does not require a reference.",
+                    "enum": ["sortmerna", "ribodetector", "bowtie2"]
                 },
                 "ribo_database_manifest": {
                     "type": "string",

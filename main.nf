@@ -101,6 +101,7 @@ workflow NFCORE_RNASEQ {
     // WORKFLOW: Run nf-core/rnaseq workflow
     //
     ch_samplesheet = Channel.value(file(params.input, checkIfExists: true))
+    ch_bowtie2_index = Channel.empty()
     RNASEQ (
         ch_samplesheet,
         ch_versions,
@@ -118,6 +119,7 @@ workflow NFCORE_RNASEQ {
         PREPARE_GENOME.out.bbsplit_index,
         PREPARE_GENOME.out.rrna_fastas,
         PREPARE_GENOME.out.sortmerna_index,
+        ch_bowtie2_index,
         PREPARE_GENOME.out.splicesites
     )
     ch_versions = ch_versions.mix(RNASEQ.out.versions)

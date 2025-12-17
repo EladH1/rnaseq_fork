@@ -22,6 +22,8 @@ report_section_order:
     order: 4003
   fastqc_trimmed:
     order: 4002
+  bbmap:
+    order: 4001
   # Alignment
   star:
     order: 3000
@@ -79,12 +81,26 @@ export_plots_timeout: 60
 disable_version_detection: true
 sample_names_replace_exact: true
 
+# Group paired-end reads together in the general stats table
+table_sample_merge:
+  "Read 1":
+    - "_1"
+    - "_R1"
+    - type: regex
+      pattern: "[_.-][rR]?1$"
+  "Read 2":
+    - "_2"
+    - "_R2"
+    - type: regex
+      pattern: "[_.-][rR]?2$"
+
 # Run only these modules
 run_modules:
   - custom_content
   - fastqc
   - cutadapt
   - fastp
+  - bbmap
   - sortmerna
   - star
   - hisat2
@@ -146,6 +162,9 @@ sp:
 
   fastp:
     fn: "*.fastp.json"
+
+  bbmap:
+    fn: "*.stats.txt"
 
   sortmerna:
     fn: "*.sortmerna.log"
