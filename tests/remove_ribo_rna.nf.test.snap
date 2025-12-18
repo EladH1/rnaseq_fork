@@ -15,9 +15,6 @@
                 "CUSTOM_CATADDITIONALFASTA": {
                     "python": null
                 },
-                "CUSTOM_GETCHROMSIZES": {
-                    "getchromsizes": 1.21
-                },
                 "FQ_LINT": {
                     "fq": "0.12.0 (2024-07-08)"
                 },
@@ -33,6 +30,9 @@
                 "GUNZIP_GTF": {
                     "gunzip": 1.13
                 },
+                "SAMTOOLS_FAIDX": {
+                    "samtools": "1.22.1"
+                },
                 "SEQKIT_REPLACE": {
                     "seqkit": "2.9.0"
                 },
@@ -45,8 +45,6 @@
                     "star": "2.7.11b"
                 },
                 "TRIMGALORE": {
-                    "cutadapt": 4.9,
-                    "pigz": 2.8,
                     "trimgalore": "0.6.10"
                 },
                 "UNTAR_SALMON_INDEX": {
@@ -129,7 +127,7 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.2"
         },
-        "timestamp": "2025-12-17T22:58:29.218116054"
+        "timestamp": "2025-12-18T14:06:43.267215244"
     },
     "Params: --remove_ribo_rna": {
         "content": [
@@ -143,9 +141,6 @@
                 },
                 "CUSTOM_CATADDITIONALFASTA": {
                     "python": "3.12.2"
-                },
-                "CUSTOM_GETCHROMSIZES": {
-                    "getchromsizes": 1.21
                 },
                 "CUSTOM_TX2GENE": {
                     "python": "3.10.4"
@@ -174,20 +169,23 @@
                 "SALMON_QUANT": {
                     "salmon": "1.10.3"
                 },
+                "SAMTOOLS_FAIDX": {
+                    "samtools": "1.22.1"
+                },
                 "SAMTOOLS_FLAGSTAT": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_IDXSTATS": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_INDEX": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_SORT": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_STATS": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SE_GENE_UNIFIED": {
                     "bioconductor-summarizedexperiment": "1.32.0"
@@ -212,8 +210,6 @@
                     "star": "2.7.11b"
                 },
                 "TRIMGALORE": {
-                    "cutadapt": 4.9,
-                    "pigz": 2.8,
                     "trimgalore": "0.6.10"
                 },
                 "TXIMETA_TXIMPORT": {
@@ -731,7 +727,6 @@
                 "fastqc_trimmed_sequence_counts_plot.txt:md5,9fd642bdd1da354f296bb8092205608f",
                 "fastqc_trimmed_sequence_duplication_levels_plot.txt:md5,0758257b497283b1ef28171e694db6db",
                 "multiqc_citations.txt:md5,f6260591e6b24fd9285b4b259c80e5ea",
-                "multiqc_cutadapt.txt:md5,583b7b9ba76b26162bb9610ed746454b",
                 "multiqc_fastqc_fastqc_trimmed.txt:md5,54743154d0e8858980acffeb5b6f6a97",
                 "multiqc_samtools_idxstats.txt:md5,58f19b28617037a2825f812d58d55e2e",
                 "picard_MarkIlluminaAdapters_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
@@ -808,7 +803,7 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.2"
         },
-        "timestamp": "2025-12-17T22:52:08.059553515"
+        "timestamp": "2025-12-18T14:00:09.906325155"
     },
     "Params: --remove_ribo_rna - stub": {
         "content": [
@@ -822,9 +817,6 @@
                 },
                 "CUSTOM_CATADDITIONALFASTA": {
                     "python": null
-                },
-                "CUSTOM_GETCHROMSIZES": {
-                    "getchromsizes": 1.21
                 },
                 "FQ_LINT": {
                     "fq": "0.12.0 (2024-07-08)"
@@ -841,6 +833,9 @@
                 "GUNZIP_GTF": {
                     "gunzip": 1.13
                 },
+                "SAMTOOLS_FAIDX": {
+                    "samtools": "1.22.1"
+                },
                 "SORTMERNA_INDEX": {
                     "sortmerna": "4.3.7"
                 },
@@ -850,8 +845,6 @@
                     "star": "2.7.11b"
                 },
                 "TRIMGALORE": {
-                    "cutadapt": 4.9,
-                    "pigz": 2.8,
                     "trimgalore": "0.6.10"
                 },
                 "UNTAR_SALMON_INDEX": {
@@ -899,7 +892,7 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.2"
         },
-        "timestamp": "2025-12-17T22:52:41.630741255"
+        "timestamp": "2025-12-18T14:00:45.105569138"
     },
     "Params: --remove_ribo_rna --ribo_removal_tool bowtie2": {
         "content": [
@@ -926,9 +919,6 @@
                 },
                 "CUSTOM_CATADDITIONALFASTA": {
                     "python": "3.12.2"
-                },
-                "CUSTOM_GETCHROMSIZES": {
-                    "getchromsizes": 1.21
                 },
                 "CUSTOM_TX2GENE": {
                     "python": "3.10.4"
@@ -957,23 +947,26 @@
                 "SALMON_QUANT": {
                     "salmon": "1.10.3"
                 },
+                "SAMTOOLS_FAIDX": {
+                    "samtools": "1.22.1"
+                },
                 "SAMTOOLS_FASTQ_BOWTIE2": {
                     "samtools": "1.22.1"
                 },
                 "SAMTOOLS_FLAGSTAT": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_IDXSTATS": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_INDEX": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_SORT": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_STATS": {
-                    "samtools": 1.21
+                    "samtools": "1.22.1"
                 },
                 "SAMTOOLS_VIEW_BOWTIE2": {
                     "samtools": "1.22.1"
@@ -1001,8 +994,6 @@
                     "star": "2.7.11b"
                 },
                 "TRIMGALORE": {
-                    "cutadapt": 4.9,
-                    "pigz": 2.8,
                     "trimgalore": "0.6.10"
                 },
                 "TXIMETA_TXIMPORT": {
@@ -1545,7 +1536,6 @@
                 "fastqc_trimmed_sequence_counts_plot.txt:md5,9fd642bdd1da354f296bb8092205608f",
                 "fastqc_trimmed_sequence_duplication_levels_plot.txt:md5,0758257b497283b1ef28171e694db6db",
                 "multiqc_citations.txt:md5,5dde7a448d7767cdb5f37a84e9fe2da9",
-                "multiqc_cutadapt.txt:md5,583b7b9ba76b26162bb9610ed746454b",
                 "multiqc_fastqc_fastqc_trimmed.txt:md5,54743154d0e8858980acffeb5b6f6a97",
                 "multiqc_samtools_idxstats.txt:md5,2651b1ad40b5f98b349f397755d59524",
                 "picard_MarkIlluminaAdapters_histogram.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
@@ -1638,6 +1628,6 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.2"
         },
-        "timestamp": "2025-12-18T09:03:12.699811961"
+        "timestamp": "2025-12-18T14:06:03.39529504"
     }
 }
