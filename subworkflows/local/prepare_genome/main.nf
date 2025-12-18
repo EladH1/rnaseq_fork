@@ -18,7 +18,7 @@ include { UNTAR as UNTAR_SALMON_INDEX       } from '../../../modules/nf-core/unt
 include { UNTAR as UNTAR_KALLISTO_INDEX     } from '../../../modules/nf-core/untar'
 
 include { CUSTOM_CATADDITIONALFASTA         } from '../../../modules/nf-core/custom/catadditionalfasta'
-include { CUSTOM_GETCHROMSIZES              } from '../../../modules/nf-core/custom/getchromsizes'
+include { SAMTOOLS_FAIDX                    } from '../../../modules/nf-core/samtools/faidx'
 include { GFFREAD                           } from '../../../modules/nf-core/gffread'
 include { BBMAP_BBSPLIT                     } from '../../../modules/nf-core/bbmap/bbsplit'
 include { SORTMERNA as SORTMERNA_INDEX      } from '../../../modules/nf-core/sortmerna'
@@ -202,10 +202,10 @@ workflow PREPARE_GENOME {
     ch_fai         = Channel.empty()
     ch_chrom_sizes = Channel.empty()
     if (fasta_provided) {
-        CUSTOM_GETCHROMSIZES(ch_fasta.map { [ [:], it ] })
-        ch_fai         = CUSTOM_GETCHROMSIZES.out.fai.map { it[1] }
-        ch_chrom_sizes = CUSTOM_GETCHROMSIZES.out.sizes.map { it[1] }
-        ch_versions    = ch_versions.mix(CUSTOM_GETCHROMSIZES.out.versions)
+        SAMTOOLS_FAIDX(ch_fasta.map { [ [:], it ] }, [ [:], [] ], true)
+        ch_fai         = SAMTOOLS_FAIDX.out.fai.map { it[1] }
+        ch_chrom_sizes = SAMTOOLS_FAIDX.out.sizes.map { it[1] }
+        ch_versions    = ch_versions.mix(SAMTOOLS_FAIDX.out.versions)
     }
 
     //------------------------------------------------
