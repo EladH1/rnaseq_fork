@@ -1531,8 +1531,6 @@
             [
                 "genome_gfp.fasta:md5,e23e302af63736a199985a169fdac055",
                 "genome_gfp.gtf:md5,c98b12c302f15731bfc36bcf297cfe28",
-                "bowtie2_pe_plot.txt:md5,9155e5a0ca9a9d188b435142c01e1271",
-                "bowtie2_se_plot.txt:md5,a0f1c8aa13352c63788047c9e509890f",
                 "cutadapt_filtered_reads_plot.txt:md5,6fa381627f7c1f664f3d4b2cb79cce90",
                 "cutadapt_trimmed_sequences_plot_3_Counts.txt:md5,13dfa866fd91dbb072689efe9aa83b1f",
                 "cutadapt_trimmed_sequences_plot_3_Obs_Exp.txt:md5,07145dd8dd3db654859b18eb0389046c",
@@ -1641,6 +1639,6 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.2"
         },
-        "timestamp": "2025-12-17T22:57:51.550270608"
+        "timestamp": "2025-12-18T09:03:12.699811961"
     }
 }
