@@ -97,10 +97,10 @@
             ]
         ],
         "meta": {
-            "nf-test": "0.9.2",
-            "nextflow": "24.10.4"
+            "nf-test": "0.9.3",
+            "nextflow": "25.10.2"
         },
-        "timestamp": "2025-01-28T13:46:14.476085587"
+        "timestamp": "2025-12-17T22:37:25.674572129"
     },
     "Params: --aligner hisat2": {
         "content": [
@@ -281,18 +281,18 @@
                 "fastqc/trim/WT_REP2_trimmed_2_val_2_fastqc.html",
                 "fastqc/trim/WT_REP2_trimmed_2_val_2_fastqc.zip",
                 "fq_lint",
+                "fq_lint/bbsplit",
+                "fq_lint/bbsplit/RAP1_IAA_30M_REP1.fq_lint.txt",
+                "fq_lint/bbsplit/RAP1_UNINDUCED_REP1.fq_lint.txt",
+                "fq_lint/bbsplit/RAP1_UNINDUCED_REP2.fq_lint.txt",
+                "fq_lint/bbsplit/WT_REP1.fq_lint.txt",
+                "fq_lint/bbsplit/WT_REP2.fq_lint.txt",
                 "fq_lint/raw",
                 "fq_lint/raw/RAP1_IAA_30M_REP1.fq_lint.txt",
                 "fq_lint/raw/RAP1_UNINDUCED_REP1.fq_lint.txt",
                 "fq_lint/raw/RAP1_UNINDUCED_REP2.fq_lint.txt",
                 "fq_lint/raw/WT_REP1.fq_lint.txt",
                 "fq_lint/raw/WT_REP2.fq_lint.txt",
-                "fq_lint/sortmerna",
-                "fq_lint/sortmerna/RAP1_IAA_30M_REP1.fq_lint.txt",
-                "fq_lint/sortmerna/RAP1_UNINDUCED_REP1.fq_lint.txt",
-                "fq_lint/sortmerna/RAP1_UNINDUCED_REP2.fq_lint.txt",
-                "fq_lint/sortmerna/WT_REP1.fq_lint.txt",
-                "fq_lint/sortmerna/WT_REP2.fq_lint.txt",
                 "fq_lint/trimmed",
                 "fq_lint/trimmed/RAP1_IAA_30M_REP1.fq_lint.txt",
                 "fq_lint/trimmed/RAP1_UNINDUCED_REP1.fq_lint.txt",
@@ -762,6 +762,9 @@
                 "multiqc/hisat2",
                 "multiqc/hisat2/multiqc_report.html",
                 "multiqc/hisat2/multiqc_report_data",
+                "multiqc/hisat2/multiqc_report_data/bbmap-bbsplit_plot.txt",
+                "multiqc/hisat2/multiqc_report_data/bbmap.txt",
+                "multiqc/hisat2/multiqc_report_data/bbsplit_stats_table.txt",
                 "multiqc/hisat2/multiqc_report_data/cutadapt_filtered_reads_plot.txt",
                 "multiqc/hisat2/multiqc_report_data/cutadapt_trimmed_sequences_plot_3_Counts.txt",
                 "multiqc/hisat2/multiqc_report_data/cutadapt_trimmed_sequences_plot_3_Obs_Exp.txt",
@@ -851,6 +854,9 @@
                 "multiqc/hisat2/multiqc_report_data/samtools_alignment_plot.txt",
                 "multiqc/hisat2/multiqc_report_plots",
                 "multiqc/hisat2/multiqc_report_plots/pdf",
+                "multiqc/hisat2/multiqc_report_plots/pdf/bbmap-bbsplit_plot-cnt.pdf",
+                "multiqc/hisat2/multiqc_report_plots/pdf/bbmap-bbsplit_plot-pct.pdf",
+                "multiqc/hisat2/multiqc_report_plots/pdf/bbsplit_stats_table.pdf",
                 "multiqc/hisat2/multiqc_report_plots/pdf/cutadapt_filtered_reads_plot-cnt.pdf",
                 "multiqc/hisat2/multiqc_report_plots/pdf/cutadapt_filtered_reads_plot-pct.pdf",
                 "multiqc/hisat2/multiqc_report_plots/pdf/cutadapt_trimmed_sequences_plot_3_Counts.pdf",
@@ -922,6 +928,9 @@
                 "multiqc/hisat2/multiqc_report_plots/pdf/samtools_alignment_plot-cnt.pdf",
                 "multiqc/hisat2/multiqc_report_plots/pdf/samtools_alignment_plot-pct.pdf",
                 "multiqc/hisat2/multiqc_report_plots/png",
+                "multiqc/hisat2/multiqc_report_plots/png/bbmap-bbsplit_plot-cnt.png",
+                "multiqc/hisat2/multiqc_report_plots/png/bbmap-bbsplit_plot-pct.png",
+                "multiqc/hisat2/multiqc_report_plots/png/bbsplit_stats_table.png",
                 "multiqc/hisat2/multiqc_report_plots/png/cutadapt_filtered_reads_plot-cnt.png",
                 "multiqc/hisat2/multiqc_report_plots/png/cutadapt_filtered_reads_plot-pct.png",
                 "multiqc/hisat2/multiqc_report_plots/png/cutadapt_trimmed_sequences_plot_3_Counts.png",
@@ -993,6 +1002,9 @@
                 "multiqc/hisat2/multiqc_report_plots/png/samtools_alignment_plot-cnt.png",
                 "multiqc/hisat2/multiqc_report_plots/png/samtools_alignment_plot-pct.png",
                 "multiqc/hisat2/multiqc_report_plots/svg",
+                "multiqc/hisat2/multiqc_report_plots/svg/bbmap-bbsplit_plot-cnt.svg",
+                "multiqc/hisat2/multiqc_report_plots/svg/bbmap-bbsplit_plot-pct.svg",
+                "multiqc/hisat2/multiqc_report_plots/svg/bbsplit_stats_table.svg",
                 "multiqc/hisat2/multiqc_report_plots/svg/cutadapt_filtered_reads_plot-cnt.svg",
                 "multiqc/hisat2/multiqc_report_plots/svg/cutadapt_filtered_reads_plot-pct.svg",
                 "multiqc/hisat2/multiqc_report_plots/svg/cutadapt_trimmed_sequences_plot_3_Counts.svg",
@@ -1314,6 +1326,6 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.2"
         },
-        "timestamp": "2025-12-04T15:43:24.360940596"
+        "timestamp": "2025-12-17T22:36:51.561751864"
     }
 }

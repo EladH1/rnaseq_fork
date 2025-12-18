@@ -22,6 +22,10 @@ report_section_order:
     order: 4003
   fastqc_trimmed:
     order: 4002
+  bbmap:
+    order: 4001
+  bowtie2_rrna:
+    order: 4000
   # Alignment
   star:
     order: 3000
@@ -79,17 +83,33 @@ export_plots_timeout: 60
 disable_version_detection: true
 sample_names_replace_exact: true
 
+# Group paired-end reads together in the general stats table
+table_sample_merge:
+  "Read 1":
+    - "_1"
+    - "_R1"
+    - type: regex
+      pattern: "[_.-][rR]?1$"
+  "Read 2":
+    - "_2"
+    - "_R2"
+    - type: regex
+      pattern: "[_.-][rR]?2$"
+
 # Run only these modules
 run_modules:
   - custom_content
   - fastqc
   - cutadapt
   - fastp
+  - bbmap
   - sortmerna
+  - bowtie2
   - star
   - hisat2
   - rsem
   - umitools
+  - umicollapse
   - salmon
   - kallisto
   - samtools
@@ -117,6 +137,10 @@ module_order:
       info: "This section of the report shows FastQC results after adapter trimming."
       path_filters:
         - "*_trimmed*fastqc.zip"
+  - bowtie2:
+      anchor: "bowtie2_rrna"
+      name: "Bowtie2 (rRNA removal)"
+      info: "This section shows Bowtie2 alignment statistics for rRNA removal. Reads were aligned against an rRNA reference to filter out ribosomal RNA contamination."
 
 # Don't show % Dups in the General Stats table (we have this from Picard)
 table_columns_visible:
@@ -131,6 +155,7 @@ extra_fn_clean_exts:
   - ".markdup"
   - "_primary"
   - ".namesorted"
+  - ".umi_extract"
   - type: remove
     pattern: "_raw"
   - type: remove
@@ -148,8 +173,14 @@ sp:
   fastp:
     fn: "*.fastp.json"
 
+  bbmap/bbsplit:
+    fn: "*.stats.txt"
+
   sortmerna:
     fn: "*.sortmerna.log"
+
+  bowtie2:
+    fn: "*.bowtie2.log"
 
   hisat2:
     fn: "*.hisat2.summary.log"
@@ -171,6 +202,15 @@ sp:
     - fn: "*.kraken2.report_bracken.txt"
   sylphtax:
     - fn: "*.sylphmpa"
+
+  umitools/extract:
+    fn: "*.umi_extract.log"
+  umitools/dedup:
+    fn: "*.umi_dedup*.log"
+
+  umicollapse:
+    fn: "*_UMICollapse.log"
+
   rseqc/bam_stat:
     fn: "*.bam_stat.txt"
   rseqc/gene_body_coverage:

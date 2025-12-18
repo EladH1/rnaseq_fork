@@ -287,8 +287,8 @@ def validateInputParameters() {
         error("Please provide either --bbsplit_fasta_list / --bbsplit_index to run BBSplit.")
     }
 
-    if (params.remove_ribo_rna && !params.ribo_database_manifest) {
-        error("Please provide --ribo_database_manifest to remove ribosomal RNA with SortMeRNA.")
+    if (params.remove_ribo_rna && params.ribo_removal_tool in ['sortmerna', 'bowtie2'] && !params.ribo_database_manifest) {
+        error("Please provide --ribo_database_manifest to remove ribosomal RNA with SortMeRNA or Bowtie2.")
     }
 
     if (params.with_umi && !params.skip_umi_extract) {

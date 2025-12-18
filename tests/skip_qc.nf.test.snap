@@ -82,10 +82,10 @@
             ]
         ],
         "meta": {
-            "nf-test": "0.9.2",
-            "nextflow": "24.10.4"
+            "nf-test": "0.9.3",
+            "nextflow": "25.10.2"
         },
-        "timestamp": "2025-01-28T14:26:25.392367126"
+        "timestamp": "2025-12-17T23:06:40.82549309"
     },
     "Params: --skip_qc": {
         "content": [
@@ -215,18 +215,18 @@
                 "fastqc/trim/WT_REP2_trimmed_2_val_2_fastqc.html",
                 "fastqc/trim/WT_REP2_trimmed_2_val_2_fastqc.zip",
                 "fq_lint",
+                "fq_lint/bbsplit",
+                "fq_lint/bbsplit/RAP1_IAA_30M_REP1.fq_lint.txt",
+                "fq_lint/bbsplit/RAP1_UNINDUCED_REP1.fq_lint.txt",
+                "fq_lint/bbsplit/RAP1_UNINDUCED_REP2.fq_lint.txt",
+                "fq_lint/bbsplit/WT_REP1.fq_lint.txt",
+                "fq_lint/bbsplit/WT_REP2.fq_lint.txt",
                 "fq_lint/raw",
                 "fq_lint/raw/RAP1_IAA_30M_REP1.fq_lint.txt",
                 "fq_lint/raw/RAP1_UNINDUCED_REP1.fq_lint.txt",
                 "fq_lint/raw/RAP1_UNINDUCED_REP2.fq_lint.txt",
                 "fq_lint/raw/WT_REP1.fq_lint.txt",
                 "fq_lint/raw/WT_REP2.fq_lint.txt",
-                "fq_lint/sortmerna",
-                "fq_lint/sortmerna/RAP1_IAA_30M_REP1.fq_lint.txt",
-                "fq_lint/sortmerna/RAP1_UNINDUCED_REP1.fq_lint.txt",
-                "fq_lint/sortmerna/RAP1_UNINDUCED_REP2.fq_lint.txt",
-                "fq_lint/sortmerna/WT_REP1.fq_lint.txt",
-                "fq_lint/sortmerna/WT_REP2.fq_lint.txt",
                 "fq_lint/trimmed",
                 "fq_lint/trimmed/RAP1_IAA_30M_REP1.fq_lint.txt",
                 "fq_lint/trimmed/RAP1_UNINDUCED_REP1.fq_lint.txt",
@@ -237,6 +237,9 @@
                 "multiqc/star_salmon",
                 "multiqc/star_salmon/multiqc_report.html",
                 "multiqc/star_salmon/multiqc_report_data",
+                "multiqc/star_salmon/multiqc_report_data/bbmap-bbsplit_plot.txt",
+                "multiqc/star_salmon/multiqc_report_data/bbmap.txt",
+                "multiqc/star_salmon/multiqc_report_data/bbsplit_stats_table.txt",
                 "multiqc/star_salmon/multiqc_report_data/cutadapt_filtered_reads_plot.txt",
                 "multiqc/star_salmon/multiqc_report_data/cutadapt_trimmed_sequences_plot_3_Counts.txt",
                 "multiqc/star_salmon/multiqc_report_data/cutadapt_trimmed_sequences_plot_3_Obs_Exp.txt",
@@ -284,6 +287,9 @@
                 "multiqc/star_salmon/multiqc_report_data/star_summary_table.txt",
                 "multiqc/star_salmon/multiqc_report_plots",
                 "multiqc/star_salmon/multiqc_report_plots/pdf",
+                "multiqc/star_salmon/multiqc_report_plots/pdf/bbmap-bbsplit_plot-cnt.pdf",
+                "multiqc/star_salmon/multiqc_report_plots/pdf/bbmap-bbsplit_plot-pct.pdf",
+                "multiqc/star_salmon/multiqc_report_plots/pdf/bbsplit_stats_table.pdf",
                 "multiqc/star_salmon/multiqc_report_plots/pdf/cutadapt_filtered_reads_plot-cnt.pdf",
                 "multiqc/star_salmon/multiqc_report_plots/pdf/cutadapt_filtered_reads_plot-pct.pdf",
                 "multiqc/star_salmon/multiqc_report_plots/pdf/cutadapt_trimmed_sequences_plot_3_Counts.pdf",
@@ -318,6 +324,9 @@
                 "multiqc/star_salmon/multiqc_report_plots/pdf/star_alignment_plot-pct.pdf",
                 "multiqc/star_salmon/multiqc_report_plots/pdf/star_summary_table.pdf",
                 "multiqc/star_salmon/multiqc_report_plots/png",
+                "multiqc/star_salmon/multiqc_report_plots/png/bbmap-bbsplit_plot-cnt.png",
+                "multiqc/star_salmon/multiqc_report_plots/png/bbmap-bbsplit_plot-pct.png",
+                "multiqc/star_salmon/multiqc_report_plots/png/bbsplit_stats_table.png",
                 "multiqc/star_salmon/multiqc_report_plots/png/cutadapt_filtered_reads_plot-cnt.png",
                 "multiqc/star_salmon/multiqc_report_plots/png/cutadapt_filtered_reads_plot-pct.png",
                 "multiqc/star_salmon/multiqc_report_plots/png/cutadapt_trimmed_sequences_plot_3_Counts.png",
@@ -352,6 +361,9 @@
                 "multiqc/star_salmon/multiqc_report_plots/png/star_alignment_plot-pct.png",
                 "multiqc/star_salmon/multiqc_report_plots/png/star_summary_table.png",
                 "multiqc/star_salmon/multiqc_report_plots/svg",
+                "multiqc/star_salmon/multiqc_report_plots/svg/bbmap-bbsplit_plot-cnt.svg",
+                "multiqc/star_salmon/multiqc_report_plots/svg/bbmap-bbsplit_plot-pct.svg",
+                "multiqc/star_salmon/multiqc_report_plots/svg/bbsplit_stats_table.svg",
                 "multiqc/star_salmon/multiqc_report_plots/svg/cutadapt_filtered_reads_plot-cnt.svg",
                 "multiqc/star_salmon/multiqc_report_plots/svg/cutadapt_filtered_reads_plot-pct.svg",
                 "multiqc/star_salmon/multiqc_report_plots/svg/cutadapt_trimmed_sequences_plot_3_Counts.svg",
@@ -812,9 +824,9 @@
             ]
         ],
         "meta": {
-            "nf-test": "0.9.2",
-            "nextflow": "25.04.6"
+            "nf-test": "0.9.3",
+            "nextflow": "25.10.2"
         },
-        "timestamp": "2025-08-12T12:29:14.739888067"
+        "timestamp": "2025-12-17T23:06:06.952716583"
     }
 }
