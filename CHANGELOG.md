@@ -17,7 +17,7 @@ Special thanks to the following for their contributions to the release:
 - [PR #1663](https://github.com/nf-core/rnaseq/pull/1663) - Bump version after release 3.22.2
 - [PR #1664](https://github.com/nf-core/rnaseq/pull/1664) - Add support for multiple rRNA removal tools (`--ribo_removal_tool`): SortMeRNA (default), Bowtie2, and RiboDetector; enable BBSplit MultiQC reporting; add paired-end read grouping in MultiQC
 
-## Parameters
+### Parameters
 
 | Old parameter | New parameter      |
 | ------------- | ------------------ |

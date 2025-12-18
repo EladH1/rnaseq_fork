@@ -57,7 +57,7 @@ The pipeline is built using [Nextflow](https://www.nextflow.io/) and processes d
     - [featureCounts](#featurecounts)
     - [DESeq2](#deseq2)
     - [Kraken2/Bracken](#kraken2bracken)
-    - [Sylph](#Sylph)
+    - [Sylph](#sylph)
     - [MultiQC](#multiqc)
   - [Pseudoalignment and quantification](#pseudoalignment-and-quantification)
     - [Pseudoalignment](#pseudoalignment)

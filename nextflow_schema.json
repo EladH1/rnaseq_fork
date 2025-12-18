@@ -616,7 +616,7 @@
                     "type": "string",
                     "format": "directory-path",
                     "description": "Database when using Kraken2/Bracken for contaminant screening.",
-                    "help_text": "See the usage documentation for more information on setting up and using Kraken2 databases. Requires the --contaminant-screening option to be set to 'kraken2' or 'kraken2_bracken' to have an effect",
+                    "help_text": "See the usage documentation for more information on setting up and using Kraken2 databases. Requires the --contaminant_screening option to be set to 'kraken2' or 'kraken2_bracken' to have an effect",
                     "fa_icon": "fas fa-fish"
                 },
                 "bracken_precision": {
@@ -624,20 +624,20 @@
                     "default": "S",
                     "fa_icon": "fas fa-tree",
                     "description": "Taxonomic level for Bracken abundance estimations.",
-                    "help_text": "Use the first letter of taxonomic levels: Domain, Phylum, Class, Order, Family, Genus, or Species. Requires --contaminant-screening option to be set to 'kraken2_bracken' to have an effect.",
+                    "help_text": "Use the first letter of taxonomic levels: Domain, Phylum, Class, Order, Family, Genus, or Species. Requires --contaminant_screening option to be set to 'kraken2_bracken' to have an effect.",
                     "enum": ["D", "P", "C", "O", "F", "G", "S"]
                 },
                 "sylph_db": {
                     "type": "string",
                     "format": "file-path",
                     "description": "Comma separated list of databases to profile against when using Sylph for contamination detection",
-                    "help_text": "See the usage documentation for more information on setting up and using Sylph databases. Requires --contaminant-screening option to be set to 'sylph' to have an effect.",
+                    "help_text": "See the usage documentation for more information on setting up and using Sylph databases. Requires --contaminant_screening option to be set to 'sylph' to have an effect.",
                     "fa_icon": "fas fa-database"
                 },
                 "sylph_taxonomy": {
                     "type": "string",
                     "description": "Comma separated list of taxonomies when using Sylph for contamination detection",
-                    "help_text": "See the usage documentation for more information on Sylph taxonomies. Requires --contaminant-screening option to be set to 'sylph' to have an effect.",
+                    "help_text": "See the usage documentation for more information on Sylph taxonomies. Requires --contaminant_screening option to be set to 'sylph' to have an effect.",
                     "fa_icon": "fas fa-tree",
                     "format": "file-path"
                 }
