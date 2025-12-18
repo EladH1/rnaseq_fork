@@ -89,7 +89,7 @@
     },
     "Params: default --use_sentieon_star": {
         "content": [
-            33,
+            112,
             {
                 "BBMAP_BBSPLIT": {
                     "bbmap": 39.18
@@ -103,7 +103,13 @@
                 "CUSTOM_GETCHROMSIZES": {
                     "getchromsizes": 1.21
                 },
+                "CUSTOM_TX2GENE": {
+                    "python": "3.10.4"
+                },
                 "FQ_LINT": {
+                    "fq": "0.12.0 (2024-07-08)"
+                },
+                "FQ_SUBSAMPLE": {
                     "fq": "0.12.0 (2024-07-08)"
                 },
                 "GTF2BED": {
@@ -118,6 +124,36 @@
                 "GUNZIP_GTF": {
                     "gunzip": 1.13
                 },
+                "PICARD_MARKDUPLICATES": {
+                    "picard": "3.1.1"
+                },
+                "SALMON_QUANT": {
+                    "salmon": "1.10.3"
+                },
+                "SAMTOOLS_FLAGSTAT": {
+                    "samtools": 1.21
+                },
+                "SAMTOOLS_IDXSTATS": {
+                    "samtools": 1.21
+                },
+                "SAMTOOLS_INDEX": {
+                    "samtools": 1.21
+                },
+                "SAMTOOLS_SORT": {
+                    "samtools": 1.21
+                },
+                "SAMTOOLS_STATS": {
+                    "samtools": 1.21
+                },
+                "SENTIEON_STAR_ALIGN": {
+                    "star": "2.7.10b"
+                },
+                "SE_GENE_UNIFIED": {
+                    "bioconductor-summarizedexperiment": "1.32.0"
+                },
+                "SE_TRANSCRIPT_UNIFIED": {
+                    "bioconductor-summarizedexperiment": "1.32.0"
+                },
                 "STAR_GENOMEGENERATE": {
                     "gawk": "5.1.0",
                     "samtools": 1.21,
@@ -127,6 +163,9 @@
                     "cutadapt": 4.9,
                     "pigz": 2.8,
                     "trimgalore": "0.6.10"
+                },
+                "TXIMETA_TXIMPORT": {
+                    "bioconductor-tximeta": "1.20.1"
                 },
                 "UNTAR_SALMON_INDEX": {
                     "untar": 1.34
@@ -213,7 +252,29 @@
                 "observed_bias.gz:md5,92bcd0592d22a6a58d0360fc76103e56",
                 "observed_bias_3p.gz:md5,92bcd0592d22a6a58d0360fc76103e56",
                 "cmd_info.json:md5,87bcf1e84fc31a794e3c8f8b227d11c3",
-                "lib_format_counts.json:md5,f6d44c0221f7fd559f11a9afe04c9935"
+                "lib_format_counts.json:md5,f6d44c0221f7fd559f11a9afe04c9935",
+                "cmd_info.json:md5,faf70330c73fdce087631bb06de8a12f",
+                "ambig_info.tsv:md5,a044fe7a3ad445c9a91a0d54ab5015d1",
+                "expected_bias.gz:md5,3407f87245d0003e0ffbfdf6d8c04f20",
+                "observed_bias.gz:md5,92bcd0592d22a6a58d0360fc76103e56",
+                "observed_bias_3p.gz:md5,92bcd0592d22a6a58d0360fc76103e56",
+                "cmd_info.json:md5,563fd8191cc965524621c2afea7983ff",
+                "ambig_info.tsv:md5,7a8ea02d74058efb801e8c62bca96fd4",
+                "expected_bias.gz:md5,3407f87245d0003e0ffbfdf6d8c04f20",
+                "observed_bias.gz:md5,92bcd0592d22a6a58d0360fc76103e56",
+                "observed_bias_3p.gz:md5,92bcd0592d22a6a58d0360fc76103e56",
+                "cmd_info.json:md5,867de0b90aeccb5f9627e821a973aea7",
+                "ambig_info.tsv:md5,543a047a549437026a1363ea8ddf5b03",
+                "expected_bias.gz:md5,3407f87245d0003e0ffbfdf6d8c04f20",
+                "observed_bias.gz:md5,92bcd0592d22a6a58d0360fc76103e56",
+                "observed_bias_3p.gz:md5,92bcd0592d22a6a58d0360fc76103e56",
+                "cmd_info.json:md5,3a51e7db950cee84bed0b13e329f1934",
+                "RAP1_IAA_30M_REP1.SJ.out.tab:md5,ea95e243278af55534f2c52eb5fff7ee",
+                "RAP1_UNINDUCED_REP1.SJ.out.tab:md5,e548d13942535dc0821f3ec6d9743ec8",
+                "RAP1_UNINDUCED_REP2.SJ.out.tab:md5,1f294365343a1a5e95682792fdb77033",
+                "WT_REP1.SJ.out.tab:md5,1350c2fa6a675bf107386c6cd3fc5204",
+                "WT_REP2.SJ.out.tab:md5,f6cc03643a5e3c1025a5b4754eb1be23",
+                "tx2gene.tsv:md5,0e2418a69d2eba45097ebffc2f700bfe"
             ]
         ],
         "meta": {

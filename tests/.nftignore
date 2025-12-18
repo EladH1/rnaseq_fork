@@ -106,6 +106,8 @@ umitools/*.umi_extract.log
 {multiqc,multiqc/**}/multiqc_report_data/samtools-flagstat-table.txt
 {multiqc,multiqc/**}/multiqc_report_data/samtools-stats-dp.txt
 {multiqc,multiqc/**}/multiqc_report_data/samtools_alignment_plot.txt
+{multiqc,multiqc/**}/multiqc_report_data/bowtie2_pe_plot.txt
+{multiqc,multiqc/**}/multiqc_report_data/bowtie2_se_plot.txt
 {multiqc,multiqc/**}/multiqc_report_data/bowtie2_rrna-*.txt
 {multiqc,multiqc/**}/multiqc_report_data/ribodetector-*.txt
 {multiqc,multiqc/**}/multiqc_report_data/sortmerna-detailed-plot.txt
