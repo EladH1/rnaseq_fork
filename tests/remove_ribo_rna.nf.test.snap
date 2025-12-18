@@ -1544,7 +1544,6 @@
                 "fastqc_trimmed_per_sequence_quality_scores_plot.txt:md5,0f9834cc19f76dd5c87cf8cba7435a7c",
                 "fastqc_trimmed_sequence_counts_plot.txt:md5,9fd642bdd1da354f296bb8092205608f",
                 "fastqc_trimmed_sequence_duplication_levels_plot.txt:md5,0758257b497283b1ef28171e694db6db",
-                "multiqc_bowtie2_bowtie2_rrna.txt:md5,f6552f5a2b19f1f7f7650545c7b21b31",
                 "multiqc_citations.txt:md5,5dde7a448d7767cdb5f37a84e9fe2da9",
                 "multiqc_cutadapt.txt:md5,583b7b9ba76b26162bb9610ed746454b",
                 "multiqc_fastqc_fastqc_trimmed.txt:md5,54743154d0e8858980acffeb5b6f6a97",
