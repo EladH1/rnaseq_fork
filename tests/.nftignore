@@ -80,6 +80,7 @@ umitools/*.umi_extract.log
 {multiqc,multiqc/**}/multiqc_report_data/multiqc_software_versions.txt
 {multiqc,multiqc/**}/multiqc_report_data/multiqc_bowtie2_rrna.txt
 {multiqc,multiqc/**}/multiqc_report_data/multiqc_bowtie2_bowtie2_rrna.txt
+{multiqc,multiqc/**}/multiqc_report_data/multiqc_cutadapt.txt
 {multiqc,multiqc/**}/multiqc_report_data/multiqc_ribodetector.txt
 {multiqc,multiqc/**}/multiqc_report_data/multiqc_sortmerna.txt
 {multiqc,multiqc/**}/multiqc_report_data/multiqc_sources.txt

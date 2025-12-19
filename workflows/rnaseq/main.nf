@@ -578,9 +578,9 @@ workflow RNASEQ {
             // Sort BAM by name for qualimap (performance optimization)
             SAMTOOLS_SORT_QUALIMAP (
                 ch_genome_bam,
-                ch_fasta.map { [ [:], it ] }
+                ch_fasta.map { [ [:], it ] },
+                ''
             )
-            ch_versions = ch_versions.mix(SAMTOOLS_SORT_QUALIMAP.out.versions.first())
 
             QUALIMAP_RNASEQ (
                 SAMTOOLS_SORT_QUALIMAP.out.bam,
@@ -610,7 +610,7 @@ workflow RNASEQ {
         }
         if (!params.skip_rseqc && rseqc_modules.size() > 0) {
             BAM_RSEQC (
-                ch_genome_bam.join(ch_genome_bam_index, by: [0]),
+                ch_genome_bam.join(ch_genome_bam_index, by: [0]).map { meta, bam, bai -> [ meta, [ bam, bai ] ] },
                 ch_gene_bed,
                 rseqc_modules
             )
@@ -622,7 +622,6 @@ workflow RNASEQ {
             ch_multiqc_files = ch_multiqc_files.mix(BAM_RSEQC.out.readdistribution_txt.collect{it[1]})
             ch_multiqc_files = ch_multiqc_files.mix(BAM_RSEQC.out.readduplication_pos_xls.collect{it[1]})
             ch_multiqc_files = ch_multiqc_files.mix(BAM_RSEQC.out.tin_txt.collect{it[1]})
-            ch_versions = ch_versions.mix(BAM_RSEQC.out.versions)
 
             // Compare predicted supplied or Salmon-predicted strand with what we get from RSeQC
             ch_strand_comparison = BAM_RSEQC.out.inferexperiment_txt

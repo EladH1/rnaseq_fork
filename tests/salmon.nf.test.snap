@@ -12,9 +12,6 @@
                 "CUSTOM_CATADDITIONALFASTA": {
                     "python": "3.12.2"
                 },
-                "CUSTOM_GETCHROMSIZES": {
-                    "getchromsizes": 1.21
-                },
                 "CUSTOM_TX2GENE": {
                     "python": "3.10.4"
                 },
@@ -39,6 +36,9 @@
                 "SALMON_QUANT": {
                     "salmon": "1.10.3"
                 },
+                "SAMTOOLS_FAIDX": {
+                    "samtools": "1.22.1"
+                },
                 "SE_GENE_UNIFIED": {
                     "bioconductor-summarizedexperiment": "1.32.0"
                 },
@@ -46,8 +46,6 @@
                     "bioconductor-summarizedexperiment": "1.32.0"
                 },
                 "TRIMGALORE": {
-                    "cutadapt": 4.9,
-                    "pigz": 2.8,
                     "trimgalore": "0.6.10"
                 },
                 "TXIMETA_TXIMPORT": {
@@ -322,7 +320,6 @@
                 "fastqc_trimmed_sequence_counts_plot.txt:md5,9fd642bdd1da354f296bb8092205608f",
                 "fastqc_trimmed_sequence_duplication_levels_plot.txt:md5,0758257b497283b1ef28171e694db6db",
                 "multiqc_citations.txt:md5,f789abe663d4b4214f0ddeb413a7f150",
-                "multiqc_cutadapt.txt:md5,583b7b9ba76b26162bb9610ed746454b",
                 "multiqc_fastqc_fastqc_trimmed.txt:md5,54743154d0e8858980acffeb5b6f6a97",
                 "ambig_info.tsv:md5,de973a4b22a4457217ae3dc04caf9401",
                 "expected_bias.gz:md5,3407f87245d0003e0ffbfdf6d8c04f20",
@@ -361,7 +358,7 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.2"
         },
-        "timestamp": "2025-12-17T23:00:14.941352786"
+        "timestamp": "2025-12-18T14:08:31.888282901"
     },
     "Params: --pseudo_aligner salmon --skip_qc --skip_alignment - stub": {
         "content": [
@@ -375,9 +372,6 @@
                 },
                 "CUSTOM_CATADDITIONALFASTA": {
                     "python": null
-                },
-                "CUSTOM_GETCHROMSIZES": {
-                    "getchromsizes": 1.21
                 },
                 "FQ_LINT": {
                     "fq": "0.12.0 (2024-07-08)"
@@ -394,9 +388,10 @@
                 "GUNZIP_GTF": {
                     "gunzip": 1.13
                 },
+                "SAMTOOLS_FAIDX": {
+                    "samtools": "1.22.1"
+                },
                 "TRIMGALORE": {
-                    "cutadapt": 4.9,
-                    "pigz": 2.8,
                     "trimgalore": "0.6.10"
                 },
                 "UNTAR_SALMON_INDEX": {
@@ -443,6 +438,6 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.2"
         },
-        "timestamp": "2025-12-17T23:00:46.336123015"
+        "timestamp": "2025-12-18T14:09:04.576264233"
     }
 }
