@@ -43,6 +43,8 @@ include { STRINGTIE_STRINGTIE        } from '../../modules/nf-core/stringtie/str
 include { SUBREAD_FEATURECOUNTS      } from '../../modules/nf-core/subread/featurecounts'
 include { KRAKEN2_KRAKEN2 as KRAKEN2 } from '../../modules/nf-core/kraken2/kraken2/main'
 include { BRACKEN_BRACKEN as BRACKEN } from '../../modules/nf-core/bracken/bracken/main'
+include { SYLPH_PROFILE              } from '../../modules/nf-core/sylph/profile/main'
+include { SYLPHTAX_TAXPROF           } from '../../modules/nf-core/sylphtax/taxprof/main'
 include { MULTIQC                    } from '../../modules/nf-core/multiqc'
 include { BEDTOOLS_GENOMECOV as BEDTOOLS_GENOMECOV_FW          } from '../../modules/nf-core/bedtools/genomecov'
 include { BEDTOOLS_GENOMECOV as BEDTOOLS_GENOMECOV_REV         } from '../../modules/nf-core/bedtools/genomecov'
@@ -701,6 +703,24 @@ workflow RNASEQ {
                 ch_versions = ch_versions.mix(BRACKEN.out.versions)
                 ch_multiqc_files = ch_multiqc_files.mix(BRACKEN.out.txt.collect{it[1]})
             }
+        } else if (params.contaminant_screening == 'sylph') {
+            def sylph_databases = params.sylph_db ? params.sylph_db.split(',').collect{ file(it.trim()) } : []
+            ch_sylph_databases = channel.value(sylph_databases)
+            SYLPH_PROFILE (
+                ch_unaligned_sequences,
+                ch_sylph_databases
+            )
+            ch_sylph_profile = SYLPH_PROFILE.out.profile_out.filter{!it[1].isEmpty()}
+            ch_versions = ch_versions.mix(SYLPH_PROFILE.out.versions)
+
+            def sylph_taxonomies = params.sylph_taxonomy ? params.sylph_taxonomy.split(',').collect{ file(it.trim()) } : []
+            ch_sylph_taxonomies = channel.value(sylph_taxonomies)
+            SYLPHTAX_TAXPROF (
+                ch_sylph_profile,
+                ch_sylph_taxonomies
+            )
+            ch_versions = ch_versions.mix(SYLPHTAX_TAXPROF.out.versions)
+            ch_multiqc_files = ch_multiqc_files.mix(SYLPHTAX_TAXPROF.out.taxprof_output.collect{it[1]})
         }
     }
 

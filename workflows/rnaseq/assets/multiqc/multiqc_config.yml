@@ -118,6 +118,7 @@ run_modules:
   - rseqc
   - qualimap
   - kraken
+  - sylphtax
 
 # Order of modules
 
@@ -199,6 +200,8 @@ sp:
   kraken:
     - fn: "*.kraken2.report.txt"
     - fn: "*.kraken2.report_bracken.txt"
+  sylphtax:
+    - fn: "*.sylphmpa"
 
   umitools/extract:
     fn: "*.umi_extract.log"
