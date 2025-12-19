@@ -102,6 +102,7 @@ run_modules:
   - fastqc
   - cutadapt
   - fastp
+  - seqkit
   - bbmap
   - sortmerna
   - bowtie2
@@ -131,6 +132,11 @@ module_order:
         - "*_raw*fastqc.zip"
   - cutadapt
   - fastp
+  - seqkit:
+      name: "SeqKit Stats (rRNA removal)"
+      info: "Read length statistics used by RiboDetector for rRNA removal."
+      path_filters:
+        - "*.rrna_removal_stats.tsv"
   - fastqc:
       anchor: "fastqc_trimmed"
       name: "FastQC (trimmed)"
@@ -184,6 +190,9 @@ sp:
 
   hisat2:
     fn: "*.hisat2.summary.log"
+
+  seqkit/stats:
+    fn: "*.rrna_removal_stats.tsv"
 
   salmon/meta:
     fn: "meta_info.json"
