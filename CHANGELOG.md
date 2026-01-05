@@ -4,10 +4,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## dev - xxxx-xx-xx
+
 - [PR #1667] (https://github.com/nf-core/rnaseq/pull/1667) - remove checks from old code, Added RSEM 'long' emmit
+
 ### Credits
+
 - [Elad Herz] (https://github.com/EladH1)
-Special thanks to the following for their contributions to the release:
+  Special thanks to the following for their contributions to the release:
 
 - [Ezra Greenberg](https://github.com/egreenberg7)
 
