@@ -5,14 +5,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## dev - xxxx-xx-xx
 
-- [PR #1667] (https://github.com/nf-core/rnaseq/pull/1667) - remove checks from old code, Added RSEM 'long' emmit
 
 ### Credits
 
-- [Elad Herz] (https://github.com/EladH1)
   Special thanks to the following for their contributions to the release:
 
 - [Ezra Greenberg](https://github.com/egreenberg7)
+- [Elad Herz](https://github.com/EladH1)
 
 ### Enhancements and fixes
 
@@ -20,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [PR #1663](https://github.com/nf-core/rnaseq/pull/1663) - Bump version after release 3.22.2
 - [PR #1664](https://github.com/nf-core/rnaseq/pull/1664) - Add support for multiple rRNA removal tools (`--ribo_removal_tool`): SortMeRNA (default), Bowtie2, and RiboDetector; enable BBSplit MultiQC reporting; add paired-end read grouping in MultiQC
 - [PR #1665](https://github.com/nf-core/rnaseq/pull/1665) - Bulk update modules/subworkflows; replace CUSTOM_GETCHROMSIZES with SAMTOOLS_FAIDX; update RSEQC modules with Wave containers for ARM compatibility; update ARM containers for RSEQC and UMITOOLS
+- [PR #1667] (https://github.com/nf-core/rnaseq/pull/1667) - remove checks from old code, Added RSEM 'long' emmit
 - [PR #1669](https://github.com/nf-core/rnaseq/pull/1669) - Enable SeqKit stats MultiQC module for RiboDetector rRNA removal
 
 ### Parameters
