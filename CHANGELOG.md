@@ -9,8 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Special thanks to the following for their contributions to the release:
 
-- [Ezra Greenberg](https://github.com/egreenberg7)
 - [Elad Herz](https://github.com/EladH1)
+- [Ezra Greenberg](https://github.com/egreenberg7)
 
 ### Enhancements and fixes
 
